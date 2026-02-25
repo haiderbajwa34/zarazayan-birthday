@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zara Zayan – Happy Birthday 💋</title>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <style>
+    /* Normal standard fonts */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(to bottom, #1a000d, #000d1a);
+      color: #ffffff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      text-align: center;
+    }
+    #intro, #main { 
+      min-height: 100vh; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+      padding: 20px; 
+    }
+    .hidden { display: none; }
+    h1 { font-size: 2.5rem; color: #ff4081; margin-bottom: 20px; }
+    p { font-size: 1.1rem; margin-bottom: 15px; color: #ffebee; }
+    
+    .btn-container { margin: 20px 0; }
+    button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      background: #d500f9;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 8px;
+      transition: 0.3s;
+    }
+    button:hover { background: #ff1744; transform: scale(1.05); }
+
+    .kiss-center img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(255, 23, 68, 0.5);
+    }
+
+    /* Emoji rain styling */
+    .emoji-item {
+      position: fixed;
+      top: -50px;
+      z-index: 1000;
+      font-size: 2rem;
+      pointer-events: none;
+      animation: fall linear forwards;
+    }
+    @keyframes fall {
+      to { transform: translateY(110vh) rotate(360deg); }
+    }
+
+    #gift-box, #poem-box {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 64, 129, 0.3);
+      border-radius: 10px;
+      display: none;
+      max-width: 500px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="intro">
+  <h1>Aankhein band kar jaan... 🙈</h1>
+  <p>Ek pyaara sa surprise tera intezaar kar raha hai.</p>
+  <button onclick="reveal()">Ab Open Karo! ✨</button>
+</div>
+
+<div id="main" class="hidden">
+  <h1>Happy Birthday Zara Zayan! 💖</h1>
+  
+  <div class="kiss-center">
+    <img src="https://gifdb.com/images/high/lovers-passionate-kissing-at-the-beach-8bvjr22odlh1fj31.gif" alt="Birthday Kiss">
+  </div>
+
+  <div class="btn-container">
+    <button onclick="sendEmojiKiss('💋')">Send Kiss 💋</button>
+    <button onclick="sendEmojiKiss('❤️')">Send Love ❤️</button>
+    <button onclick="sendEmojiKiss('🌹')">Send Rose 🌹</button>
+  </div>
+
+  <p id="status-msg" style="height: 25px; color: #ff80ab; font-weight: bold;"></p>
+
+  <div>
+    <button onclick="toggleSection('gift-box')" style="background:#c2185b;">My Gift 🎁</button>
+    <button onclick="toggleSection('poem-box')" style="background:#c2185b;">My Poem 📜</button>
+  </div>
+
+  <div id="gift-box">
+    <p>🎂 Yeh Chocolate Cake aur Infinity Love sirf tumhare liye!</p>
+    <p>🍫🌹💞</p>
+  </div>
+
+  <div id="poem-box">
+    <p>Meri Zara Zayan, janamdin mubarak ho tujhe,<br>
+    Teri muskurahat se roshan hai yeh dil mera har pal.<br>
+    Tu meri jaan hai, meri duniya, mera sansaar. 💕</p>
+  </div>
+</div>
+
+<script>
+function reveal() {
+  document.getElementById('intro').classList.add('hidden');
+  document.getElementById('main').classList.remove('hidden');
+}
+
+function sendEmojiKiss(emoji) {
+  const msg = document.getElementById('status-msg');
+  msg.textContent = "Bhej diya... feel it! " + emoji;
+
+  // Heart confetti effect
+  confetti({
+    particleCount: 50,
+    spread: 60,
+    origin: { y: 0.7 },
+    colors: ['#ff4081', '#ff1744']
+  });
+
+  // Falling Emojis Logic
+  for (let i = 0; i < 15; i++) {
+    const el = document.createElement('div');
+    el.className = 'emoji-item';
+    el.textContent = emoji;
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.fontSize = (Math.random() * 20 + 20) + 'px';
+    el.style.animationDuration = (Math.random() * 2 + 2) + 's';
+    el.style.opacity = Math.random();
+    
+    document.body.appendChild(el);
+    
+    // Remove after animation
+    setTimeout(() => el.remove(), 4000);
+  }
+}
+
+function toggleSection(id) {
+  const target = document.getElementById(id);
+  target.style.display = target.style.display === 'block' ? 'none' : 'block';
+}
+</script>
+
+</body>
+</html>
