@@ -3,23 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For My Jaan Zara Zayan 💋</title>
-  
+  <title>For My Jaan Zara 💋</title>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-  
   <style>
-    /* Basic Reset & Design */
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
+      font-family: Arial, sans-serif;
       background: linear-gradient(to bottom, #1a000d, #000000);
       color: #ffffff;
       min-height: 100vh;
       text-align: center;
       overflow-x: hidden;
     }
-
-    /* Container Styling */
     #intro, #main { 
       min-height: 100vh; 
       display: flex; 
@@ -27,68 +22,31 @@
       align-items: center; 
       justify-content: center; 
       padding: 20px; 
-      transition: opacity 0.8s ease;
     }
     .hidden { display: none !important; }
-
-    /* Text & Buttons */
-    h1 { font-size: 2.5rem; color: #ff4081; text-shadow: 0 0 15px #ff1744; margin-bottom: 10px; }
-    .sub-text { font-size: 1.2rem; color: #ff80ab; margin-bottom: 25px; font-style: italic; }
-
+    h1 { font-size: 2.5rem; color: #ff4081; text-shadow: 0 0 15px #ff1744; }
+    .sub-text { font-size: 1.2rem; color: #ff80ab; margin: 15px 0; font-style: italic; }
+    
     .btn-action {
-      padding: 15px 25px;
-      font-size: 1rem;
-      background: #d500f9;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      margin: 8px;
-      font-weight: bold;
-      transition: 0.3s;
+      padding: 15px 25px; font-size: 1rem; background: #d500f9;
+      color: white; border: none; border-radius: 50px;
+      cursor: pointer; margin: 8px; font-weight: bold;
       box-shadow: 0 4px 15px rgba(213, 0, 249, 0.4);
     }
-    .btn-action:hover { background: #ff1744; transform: scale(1.08); }
-
-    /* Image/GIF Styling */
     .kiss-center img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 20px;
-      border: 3px solid #ff4081;
-      box-shadow: 0 0 40px #ff1744;
+      width: 100%; max-width: 400px; border-radius: 20px;
+      box-shadow: 0 0 30px #ff1744; border: 2px solid #ff4081;
     }
-
-    /* Falling Emojis Animation */
     .emoji-item {
-      position: fixed;
-      top: -50px;
-      z-index: 9999;
-      pointer-events: none;
-      animation: fall linear forwards;
+      position: fixed; top: -50px; z-index: 9999;
+      pointer-events: none; animation: fall linear forwards;
     }
-    @keyframes fall {
-      to { transform: translateY(110vh) rotate(720deg); }
-    }
-
-    /* Extra Boxes */
+    @keyframes fall { to { transform: translateY(110vh) rotate(720deg); } }
     .box {
-      margin-top: 20px;
-      padding: 20px;
-      background: rgba(255, 64, 129, 0.1);
-      border: 1px solid #ff4081;
-      border-radius: 15px;
-      display: none;
-      max-width: 500px;
+      margin-top: 20px; padding: 20px; background: rgba(255, 64, 129, 0.1);
+      border: 1px solid #ff4081; border-radius: 15px; display: none; max-width: 500px;
     }
-
-    .footer-credit {
-      margin-top: 50px;
-      font-size: 0.9rem;
-      color: #777;
-      padding-bottom: 20px;
-      font-weight: bold;
-    }
+    .footer-credit { margin-top: 50px; font-size: 0.9rem; color: #777; padding-bottom: 20px; }
   </style>
 </head>
 <body>
@@ -97,48 +55,46 @@
     <source src="https://assets.mixkit.co/sfx/preview/mixkit-romantic-valentine-heartbeat-2003.mp3" type="audio/mpeg">
   </audio>
   
-  <audio id="kissSound">
-    <source src="https://www.myinstants.com/media/sounds/kiss.mp3" type="audio/mpeg">
+  <audio id="ummahSound">
+    <source src="https://www.myinstants.com/media/sounds/kiss-sound-effect.mp3" type="audio/mpeg">
   </audio>
 
   <div id="intro">
-    <h1>Mari Pyari Zara k liya 💖</h1>
+    <h1>Aankhein band karo, Zara... 🙈</h1>
     <p class="sub-text">Haider ki taraf se ek pyaara sa surprise!</p>
     <button class="btn-action" onclick="reveal()">Surprise Dekho! ✨</button>
   </div>
 
   <div id="main" class="hidden">
     <h1>Happy Birthday, Meri Jaan! 💖</h1>
-    <p class="sub-text">Meri dua hai ke tera naya saal teri aankhon ki chamak aur tere dil ki khubsurati jaisa ho. Tu jahan rahe, khushiyan tere kadam chumein. 🎂✨</p>
+    <p class="sub-text">I Love You, Zara...</p>
     
     <div class="kiss-center">
-      <img src="https://gifdb.com/images/high/lovers-passionate-kissing-at-the-beach-8bvjr22odlh1fj31.gif" alt="Romantic Kiss">
+      <img src="https://gifdb.com/images/high/lovers-passionate-kissing-at-the-beach-8bvjr22odlh1fj31.gif">
     </div>
 
     <div style="margin: 25px 0;">
-      <p style="margin-bottom: 10px; color: #ff80ab;">Kahan kiss chahiye? 😘</p>
-      <button class="btn-action" onclick="romanticAction('💋', 'Lips pe sachi wali kiss... 👄')">Kiss on Lips 👄</button>
-      <button class="btn-action" onclick="romanticAction('😘', 'Cheeks pe soft kiss... 😊')">Kiss on Cheeks 😊</button>
-      <button class="btn-action" onclick="romanticAction('🔥', 'Neck pe wild kiss... 😈')">Kiss on Neck 🔥</button>
+      <p style="color: #ff80ab; margin-bottom: 10px;">Kahan kiss chahiye? 😘</p>
+      <button class="btn-action" onclick="kissAction('💋', 'Ummmmmah! Lips pe sachi wali kiss... 👄')">Kiss on Lips 👄</button>
+      <button class="btn-action" onclick="kissAction('😘', 'Ummmmmah! Cheeks pe soft kiss... 😊')">Kiss on Cheeks 😊</button>
+      <button class="btn-action" onclick="kissAction('🔥', 'Ummmmmah! Neck pe wild kiss... 😈')">Kiss on Neck 🔥</button>
     </div>
 
-    <p id="status" style="height: 30px; color: #ff1744; font-weight: bold; font-size: 1.1rem;"></p>
+    <p id="status" style="height: 30px; color: #ff1744; font-weight: bold;"></p>
 
     <div style="margin-top: 20px;">
       <button class="btn-action" onclick="toggle('gift')" style="background:#c2185b;">My Gift 🎁</button>
-      <button class="btn-action" onclick="toggle('poem')" style="background:#c2185b;">My Heart 📜</button>
+      <button class="btn-action" onclick="toggle('poem')" style="background:#c2185b;">Birthday Dua 🤲</button>
     </div>
 
     <div id="gift" class="box">
-      <p>🎂 Yeh chocolate cake aur roses sirf tumhare liye!</p>
-      <p style="font-size: 2.5rem; margin: 10px 0;">🍫🌹💞</p>
+      <p>🎂 Chocolate cake aur roses sirf tumhare liye! 🍫🌹</p>
     </div>
 
     <div id="poem" class="box">
-      <p>Zara, tum sirf meri dost nahi, meri jaan ho.<br><br>
-      Teri muskurahat se roshan hai yeh dil mera,<br>
-      Tu meri duniya, mera sansaar hai.<br><br>
-      Hamesha khush raho! ❤️</p>
+      <p>Allah kare ke teri muskurahat hamesha barkaraar rahe.<br>
+      Teri zindagi ka har din khushiyon se bhara ho.<br><br>
+      Janamdin Mubarak ho meri jaan! ❤️</p>
     </div>
 
     <div class="footer-credit">
@@ -147,37 +103,22 @@
   </div>
 
   <script>
-    // Reveal Function
     function reveal() {
-      // Start Background Music
-      const bg = document.getElementById('bgMusic');
-      bg.volume = 0.4;
-      bg.play().catch(() => console.log("Music play blocked by browser."));
-
-      // Switch Screens
+      document.getElementById('bgMusic').play().catch(() => {});
       document.getElementById('intro').classList.add('hidden');
       document.getElementById('main').classList.remove('hidden');
-
-      // Celebration Confetti
-      confetti({
-        particleCount: 150,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#ff4081', '#ff1744', '#ffffff']
-      });
+      confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
     }
 
-    // Kiss Action Function
-    function romanticAction(emoji, msgText) {
-      // Play Kiss Sound
-      const sfx = document.getElementById('kissSound');
-      sfx.currentTime = 0;
-      sfx.play();
+    function kissAction(emoji, msg) {
+      // Play Ummmmmah Sound
+      const sound = document.getElementById('ummahSound');
+      sound.currentTime = 0; // Sound reset taaki baar baar click pe baje
+      sound.play();
 
-      // Show Message
-      document.getElementById('status').textContent = msgText;
+      document.getElementById('status').textContent = msg;
 
-      // Emoji Rain Effect
+      // Emoji Rain
       for (let i = 0; i < 20; i++) {
         const el = document.createElement('div');
         el.className = 'emoji-item';
@@ -185,26 +126,15 @@
         el.style.left = Math.random() * 100 + 'vw';
         el.style.fontSize = (Math.random() * 20 + 25) + 'px';
         el.style.animationDuration = (Math.random() * 2 + 2) + 's';
-        el.style.opacity = Math.random() + 0.5;
-        
         document.body.appendChild(el);
-        
-        // Remove emoji after it falls
         setTimeout(() => el.remove(), 4000);
       }
     }
 
-    // Toggle Gift/Poem
     function toggle(id) {
       const el = document.getElementById(id);
-      if (el.style.display === 'block') {
-        el.style.display = 'none';
-      } else {
-        el.style.display = 'block';
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
     }
   </script>
-
 </body>
 </html>
